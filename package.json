@@ -5,5 +5,5 @@
   },
   "description": "A Jasmine2 reporter that will output Protractor test results in JUnit xml format.",
   "name": "jelle-protractor-junit-reporter",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
