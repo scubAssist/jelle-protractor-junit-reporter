@@ -104,7 +104,8 @@ function JUnitScreenshotReporter(options) {
       if (specs[t].screenshot) {
         // screenshot
         xw.startElement('system-out');
-        xw.text('[[ATTACHMENT|' + specs[t].screenshot + ']]')
+        xw.text('<![CDATA[[[ATTACHMENT|' + specs[t].screenshot + ']]]]>');
+        //xw.text('[[ATTACHMENT|' + specs[t].screenshot + ']]');
         xw.endElement(); // system-out
       }
       xw.endElement(); //testcase
