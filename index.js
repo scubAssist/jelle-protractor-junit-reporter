@@ -59,7 +59,7 @@ function JUnitScreenshotReporter(options) {
       xw.writeAttribute('failures', failureCount);
     }
     xw.writeAttribute('tests', specCount);
-    //xw.writeAttribute('name', automationHeader); TODO
+    xw.writeAttribute('name', 'Tijdelijkenaam'); // TODO
     xw.writeAttribute('time', seconds);
     xw.writeAttribute('timestamp', moment().format('YYYY-MM-DDTHH:mm:ss'));
 
@@ -67,7 +67,7 @@ function JUnitScreenshotReporter(options) {
       xw.startElement('testcase');
       xw.writeAttribute('className', specs[t].description);
       xw.writeAttribute('name', specs[t].description);
-      //xw.writeAttribute('time', this.specs[t].duration / 1000); TODO
+      xw.writeAttribute('time', 100); //this.specs[t].duration / 1000); TODO
       if (specs[t].status == "pending") {
         xw.startElement('skipped');
         xw.writeAttribute('message', 'Skipped reason not provided by Protractor');
@@ -76,7 +76,7 @@ function JUnitScreenshotReporter(options) {
       if (specs[t].status == "failed") {
         xw.startElement('failure');
         xw.writeAttribute('type', 'testfailure');
-        xw.writeAttribute('message', 'Skipped reason not provided by Protractor');
+        xw.writeAttribute('message', 'Zie stack');
 
         for (var i = 0; i < specs[t].failedExpectations.length; i++) {
           var failedExpectation = specs[t].failedExpectations[i];
